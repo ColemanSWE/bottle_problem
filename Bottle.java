@@ -2,7 +2,7 @@ public class Bottle {
 	
 	//Test here!
 	public static void main(String[] args) {
-		System.out.println(calculate(3, 4, 5));
+		comparison(3, 4, 5);
 	}
 	
 	static int calculate(int target, int bottle1Vol, int bottle2Vol) {
@@ -44,5 +44,19 @@ public class Bottle {
 		return step;
 		}
 	
-	
+	static void comparison(int target, int bottle1Vol, int bottle2Vol){
+		int solution1 = calculate(target, bottle1Vol, bottle2Vol);
+		int solution2 = calculate(target, bottle2Vol, bottle1Vol);
+		
+		if (solution1 < solution2){
+			System.out.println("Solution 1 is quicker and it takes " + solution1 +  " steps.");
+		}
+		else if (solution2 < solution1) {
+			System.out.println("Solution 2 is quicker and it takes " + solution2 +  " steps.");
+		}
+		else {
+			System.out.println("They're equal.");	
+			}
+		
+	}
 }
